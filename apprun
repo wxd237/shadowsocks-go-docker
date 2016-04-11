@@ -1,4 +1,7 @@
 #!/bin/sh
 
 cd /usr/src/app/ 
+
+cat config.json
+
 exec "$@"
