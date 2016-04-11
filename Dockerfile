@@ -1,12 +1,15 @@
 FROM golang:1.6-alpine
 
-ENV GOPATH /gopackage
 RUN apk add --update git && rm -rf /var/cache/apk/*
 RUN go get github.com/shadowsocks/shadowsocks-go/cmd/shadowsocks-server
 
-ENV PATH $PATH:/gopackage/bin/
 
-ADD config.json ~
+ADD config.json /usr/src/app/
+ADD apprun /usr/src/app/
+RUN chmod 700 /usr/src/app/apprun
 EXPOSE 8388
 
 
+ENTRYPOINT ["/usr/src/app/apprun"]
+
+CMD ["shadowsocks-server"]
