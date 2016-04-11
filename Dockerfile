@@ -1,4 +1,4 @@
-FROM golang:1.6-onbuild
+FROM golang:1.6-alpine
 
 
 ENV GOPATH /gopackage
