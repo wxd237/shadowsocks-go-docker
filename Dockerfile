@@ -1,4 +1,4 @@
-FROM golang:1.6-alpine
+FROM golang:alpine
 
 RUN apk add --update git && rm -rf /var/cache/apk/*
 RUN go get github.com/shadowsocks/shadowsocks-go/cmd/shadowsocks-server
