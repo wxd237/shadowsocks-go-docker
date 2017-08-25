@@ -9,6 +9,7 @@ ADD apprun /usr/src/app/
 RUN chmod 700 /usr/src/app/apprun
 EXPOSE 8388
 
+RUN apk del git
 
 ENTRYPOINT ["/usr/src/app/apprun"]
 
