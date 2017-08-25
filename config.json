@@ -2,7 +2,7 @@
     "server":"0.0.0.0",
     "server_port":8388,
     "local_port":1080,
-    "password":"Adgj!#%&",
+    "password":"Adgj1234",
     "method": "aes-256-cfb",
     "timeout":600
 }
