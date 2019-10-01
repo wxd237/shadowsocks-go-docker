@@ -1,16 +1,17 @@
 FROM golang:alpine
 
 RUN apk add --update git && rm -rf /var/cache/apk/*
-RUN go get github.com/shadowsocks/shadowsocks-go/cmd/shadowsocks-server
+
 RUN go get -u -v github.com/shadowsocks/go-shadowsocks2
 
-ADD config.json /usr/src/app/
 ADD apprun /usr/src/app/
 RUN chmod 700 /usr/src/app/apprun
-EXPOSE 8388
+EXPOSE 8400
 
 RUN apk del git
 
+ENV ENCRYPT_TYPE AEAD_AES_256_GCM
+
 ENTRYPOINT ["/usr/src/app/apprun"]
 
-CMD ["shadowsocks-server"]
+CMD ["go-shadowsocks2 -s ':8400' -password Adgj1234 -cipher $ENCRYPT_TYPE"]
