@@ -1,5 +1,8 @@
 #!/bin/sh
 
+
+ENCRYPT=chacha20-ietf-poly1305
+
 cd /usr/src/app/ 
 
 cat config.json
