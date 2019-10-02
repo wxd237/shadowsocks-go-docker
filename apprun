@@ -6,7 +6,7 @@ ENCRYPT=chacha20-ietf-poly1305
 cd /usr/src/app/ 
 
 cat config.json
-if [ $1 == "runss" ] then
+if [ "$1" == "runss" ] ;then
 go-shadowsocks2 -s ':8400' -password Adgj1234 -cipher $ENCRYPT_TYPE
 fi
 exec "$@"
