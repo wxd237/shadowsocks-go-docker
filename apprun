@@ -1,7 +1,8 @@
 #!/bin/sh
 
 
-ENCRYPT=chacha20-ietf-poly1305
+#ENCRYPT=chacha20-ietf-poly1305
+ENCRYPT=AEAD_AES_256_GCM
 
 cd /usr/src/app/ 
 

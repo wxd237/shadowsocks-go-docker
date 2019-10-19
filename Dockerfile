@@ -16,4 +16,4 @@ RUN chmod 700 /usr/src/app/apprun
 
 ENTRYPOINT ["/usr/src/app/apprun"]
 
-CMD ["go-shadowsocks2 -s ':8400' -password Adgj1234 -cipher $ENCRYPT_TYPE"]
+CMD ["runss"]
